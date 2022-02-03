@@ -1,0 +1,131 @@
+.footer {
+	&__top {
+		width: 100%;
+		height: 386px;
+		background: url("../img/main-page/wood-bg.png") 0 0 / cover no-repeat; 
+
+		@media(max-width: $mobile) {
+			height: 192px;
+		}
+	}
+
+	&__bot {
+		height: 105px;
+		width: 100%;
+		background: #506D84;
+	}
+}
+
+.body-footer {
+	
+	&__container {
+		max-width: $containerFooter;
+		margin: 0 auto;
+		padding: 0 rem(15);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+
+		@media(max-width: $mobile) {
+			height: 192px;
+			max-width: 300px;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: nowrap;
+			text-align: center;
+		}
+	}
+
+	&__top {
+		width: 100%;
+		height: 270px;
+		@media(max-width: $mobile) {
+			max-height: 50px;
+			margin-bottom: 20px;
+		}
+	}
+	&__left {
+		display: flex;
+		flex-direction: column;
+		@media(max-width: $mobile) {
+			order: 3;
+			font-size: rem(10);
+			margin-bottom: 20px;
+		}
+	}
+	&__logo {
+		padding-top: 100px;
+		max-width: 758px;
+		height: auto;
+		margin: 0 auto;
+		& img {
+			width: 100%;
+		}
+
+		@media(max-width: $mobile) {
+			width: 300px;
+			padding-top: 0px;
+		}
+	}
+}
+.footer-contacts {
+	&__item {
+		font-size: rem(20);
+		line-height: 1.2;
+		text-transform: lowercase;
+		color: #FFFFFF;
+		@media(max-width: $mobile) {
+			font-size: rem(12);
+		}
+	}
+}
+.footer-address {
+	max-width: 350px;
+	&__item {
+		@include montserrat(500);
+		font-size: rem(13);
+		text-align: right;
+		line-height: 1.2;
+		color: #FFFFFF;
+		
+		@media(max-width: $mobile) {
+			font-size: rem(12);text-align: center;
+		}
+	}
+	@media(max-width: $mobile) {
+		order: 2;
+		margin-bottom: 20px;
+	}
+}
+
+.footer-copy {
+	&__container {
+		max-width: $containerFooter;
+		box-sizing: border-box;
+		margin: 0 auto;
+		padding: 0 rem(15);
+		display: flex;
+		height: 105px;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__rights {
+		font-size: rem(14);
+		line-height: 1.2;
+		color: #FFFFFF;
+	}
+	&__dev {
+		font-size: rem(14);
+		line-height: 1.2;
+		color: #CDCBCB;
+		& span {
+			color:#FFFFFF;
+		}
+	}
+
+	@media(max-width: $mobile) {
+		display: none;
+	}
+}

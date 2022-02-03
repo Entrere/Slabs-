@@ -1,0 +1,470 @@
+
+// Верхняя строчка с контактами	
+.info-header {
+	background-color: #66806A;
+	@extend %nunito;
+
+	&__container {
+			height: rem(30);
+			margin: 0 auto;
+			max-width: $containerHeader;
+			padding: 0 rem(15);
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content:space-between;
+	}
+
+	&__item {
+		font-size: rem(12);
+		line-height: rem(16);
+
+		&_left {
+			text-transform: uppercase;
+			color: #FFFFFF;
+		}
+	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}	
+}
+.contacts-header {
+	
+	&__list {
+		max-width: rem(325);
+		display: flex;
+		align-items: center;
+		column-gap: rem(5);
+	}
+	&__item a {
+		font-size: rem(12);
+		line-height: em(16);
+		text-transform: lowercase;
+		color: #FFFFFF;
+	}
+}
+//Средняя строка  с лого, поиском, корзиной и кабинетом
+.function-header {
+	max-width: 100%;
+	background: #E5E5E5;
+	
+	&__container {
+		margin: 0 auto;
+		max-width: $containerHeader;
+		padding: 0 rem(15);
+		box-sizing: content-box;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: rem(175);
+		@media (max-width: $mobile) {
+			padding: rem(20) rem(12) rem(10) rem(25);
+			height: rem(20);
+			margin: 0;
+		}
+	}
+	
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-top: rem(37);
+		@media (max-width: $mobile) {
+			margin:0;
+			height: rem(100);
+		}
+
+		&_left {
+			flex: 1 1 auto;
+		}
+	}
+
+	// Меню бургер
+	&__menu-icon {
+		display: none;
+
+		@media (max-width: $mobile) {
+			display: block;
+			position: relative;
+			width: rem(21);
+			height: rem(14.5);
+			cursor: pointer;
+			z-index: 5;
+			
+			span,
+			&::before,
+			&::after {
+				content: "";
+				transition: all 0.3s ease 0s;
+				left: 0;
+				top: 50%;
+				position: absolute;
+				width: 100%;
+				height: rem(3);
+				background: #506D84;
+				border-radius: 5px;
+			}
+			&::before {
+				top: 0;
+			}
+			&::after {
+				top: 100%;
+			}
+		}
+	}
+	
+	&__logo {
+		width: rem(300);
+		padding: 0 rem(10);
+		
+		@media (max-width: $tablet) {
+			max-width: rem(280);
+		}
+		& img {
+			width: 100%;
+		}
+		@media (max-width: $mobile) {
+			width: rem(200);
+			height: rem(40);
+			margin: 0 auto;
+			padding:  rem(10);
+		}
+	}
+	//Корзина
+	&__cart {
+		margin: 0px 0px 0px rem(21);
+		cursor: pointer;
+		font-size: rem(45);
+		padding: rem(10);
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+			margin: 0px 0px 0px 0px;
+			padding: 5px;
+		}
+	}
+
+	// Поиск для смартфонов
+	&__button-mobile {
+		display: none;
+		cursor: pointer;
+		background-color: transparent;
+		@media (max-width: $mobile) {
+			margin-right: rem(6);
+			display: block;
+			font-size: rem(17);
+			padding: 5px;
+		}
+	}
+
+	// Личный кабинет
+	&__personal-account {
+		cursor: pointer;
+		font-size: rem(40);
+		padding: rem(10);
+		margin-right: rem(-10); 
+
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+	//Эффект по наведению на иконки
+	&__cart:hover,
+	&__personal-account:hover {
+		transform: scale(1.1);
+
+		@media (max-width: $mobile) {
+			transform: none;
+		}
+	}
+}
+
+// Поиск
+.search-header {
+	position: relative;
+	background: rgba(136, 158, 175, 0.32);
+	border-radius: 12px;
+	
+	@media (max-width: $mobile) {
+		display: none;
+		.search-header__button {
+			color:#000000;
+		}
+	}
+
+	&__button  {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		cursor: pointer;
+		color: #889EAF;
+		font-size: rem(16);
+		padding: rem(22) rem(11) rem(22) rem(21);
+		background-color: transparent;
+		z-index: 5;
+	}	
+
+	&__input {
+		max-width: rem(404);
+		height: rem(24);
+		font-size: rem(20);
+		line-height: 1.2em;
+		text-transform: capitalize;
+		color: #161616;
+		@include montserrat(500);
+		border: none;
+		outline: none;
+		padding: rem(30) 0 rem(30) rem(48);
+		background-color: transparent;
+
+		&::placeholder {
+			color:#889EAF;
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(200);
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}	
+}
+
+// Навигация
+.navigation {
+
+	&__container {
+		margin: 0 auto;
+		max-width: $containerHeader;
+		padding: 0 rem(15);
+		box-sizing: border-box;
+	}
+
+	&__list {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		border: 3px solid rgba(136, 158, 175, 0.24);
+		border-right: none;
+		border-left: none;
+		border-bottom: none;
+		column-gap: rem(20);
+		padding-top: rem(26);
+	}
+
+	&__item {
+		cursor: pointer;
+		position: relative;
+		padding: rem(10);
+		padding-right: rem(20);
+		&:last-child {
+			margin-bottom: rem(54);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(24);
+			}
+		}
+
+		// Анимированая стрелка для выпадающего меню
+		&:hover .navigation__link::after {
+			transform: rotate(45deg);
+			background-color: #506D84;
+			right: rem(-5);
+		}
+		&:hover .navigation__link::before {
+			transform: rotate(-45deg);
+			background-color: #506D84;
+			right: rem(0);
+		}
+		& > a.navigation__link {
+			&::after,
+			&::before {
+				content:"";
+				display: block;
+				position: absolute;
+				width: rem(9);
+				height: rem(3);
+				background-color: 
+				#000000;
+				top: 50%;
+				transition: all 0.3s ease;
+			}	
+			&::after {
+				transform: rotate(-45deg);
+				right: rem(-2);
+			}
+			&::before {
+				transform: rotate(45deg);
+				right: rem(3);
+			}
+		}
+		& > a.navigation__link:only-child {
+			&:after,
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	&__link {
+		text-transform: uppercase;
+		color: #000000;
+		line-height: 1.2;	
+		white-space: nowrap;
+		font-size: rem(20);
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+			line-height: rem(20);	
+  		 }
+	}
+
+	@media (max-width: $mobile) {
+		display: none;
+   }
+}
+
+.drop-menu {
+	position: relative;
+
+	&__list {
+		opacity: 0;
+		min-width: 100%;
+		position: absolute;
+		top: 40px;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 8px rgba(189, 189, 189, 0.5);
+		border-radius: 8px;
+		z-index: -1;
+		cursor: default;
+		display: flex;
+		flex-direction: column;
+		gap: rem(11);
+		transform: scale(0);
+		transform-origin: top left;
+		transition: all 0.3s ease;
+		@media (max-width: $tablet) {
+			gap: rem(8);
+		}
+	}
+	&:hover &__list{
+			z-index: 10;
+			transform: translate(0px, 62px);
+			opacity: 1;
+			padding: rem(30) 0 ;
+			transform: scale(1);
+			@media (max-width: $tablet) {
+				padding: rem(15) 0;
+			}
+	}
+	&__item {
+		margin: 0 rem(30);
+	}
+	&__link {
+		min-width: 100%;
+		font-size: rem(15);
+		line-height: rem(18);
+		color: #506D84;
+		white-space: nowrap;
+		&:hover{
+			text-decoration: underline;
+		}
+		@media (max-width: $tablet) {
+			font-size: rem(12);
+			line-height: rem(16);
+		}
+	}
+}
+// Слайдер на главной странице
+.main-slider {
+	width: 100%;
+	height: rem(480);
+	background: #889EAF;
+	position: relative;
+	@media (max-width: $mobile) {
+		height: rem(387);
+		min-width: rem(407);
+	}
+	&__text-container {
+		max-width: rem(700);
+		height: 100%;
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: rem(20);
+		top: 0;
+		
+		padding: 0 rem(25);
+		margin: 0 rem(140);
+		@media (max-width: $tablet) {
+			margin: 0 rem(35);
+		}
+		@media (max-width: $mobile) {
+		
+			
+			padding: 0 rem(20);
+			max-height: rem(390);
+		}
+	}
+	&__title {
+		max-width: 100%;
+		font-size: rem(52);
+		font-weight: 500;
+		color: #ffffff;
+		@media (max-width: $mobile) {
+			font-size: rem(32);
+			padding: 0 rem(15);
+		}
+	}
+	&__description {
+		font-size: rem(32);
+		@extend %nunito;
+		color: #d4d4d4;
+		padding: 0 rem(15);
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+		}
+	}
+	&__image {
+		text-align: center;
+		background: #889EAF;
+	}
+	&__image img {
+		width: 100%;
+		min-height: rem(480);
+		@media (max-width: $mobile) {
+			height: rem(387);
+		}
+	}
+	&__pagination {
+		display: flex;
+		gap: rem(23);
+		bottom: 0;
+		left: 0;
+		justify-content: flex-start;
+		transform: translate(rem(173), rem(-82));
+		@media (max-width: $tablet) {
+			transform: translate(rem(73), rem(-82));
+		}
+		@media (max-width: $mobile) {
+			justify-content: center;
+			transform: translate(0, rem(-41));
+		}
+		& .swiper-pagination-bullet {
+			flex: 0 0 rem(75);
+			border-radius: none;
+			background-color: #fff;
+			border-radius: 0;
+			height: rem(7);
+			opacity: 1;
+			@media (max-width: $mobile) {
+				height: rem(3);
+			}
+		}
+		& .swiper-pagination-bullet-active {
+			background-color: #506D84;
+		}
+	}
+}
+
+	
+
+

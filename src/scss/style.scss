@@ -1,0 +1,143 @@
+@use "sass:math";
+
+// Подключение миксинов
+@import "base/mixins";
+
+// Полключение локальных шрифтов
+@import "fonts";
+
+// Иконочный шрифт
+@import "iconfonts/icons";
+
+// Стили для Свайпера
+@import "../../node_modules/swiper/swiper-bundle.min";
+
+$fontFamily: "Montserrat";
+$mainColor:  #000000;
+
+$minWidth: 390px;
+$maxWidth: 1920px;
+
+// Суммарный отступ слева и справа
+$containerPadding: 30px;
+
+//Ширина ограничивающего контейнера для ХЕДЕРА 
+$maxWidthContainerHeader: 1730px + $containerPadding;
+$containerHeader: $maxWidthContainerHeader;
+
+//Ширина ограничивающего контейнера для ФУТЕРА
+$maxWidthContainerFooter: 1645px + $containerPadding;
+$containerFooter: $maxWidthContainerFooter; 
+
+// Ширина ограничивающего контейнера для КОНТЕНТА
+$maxWidthContainerContent: 1200px + $containerPadding;
+$containerContent: $maxWidthContainerContent;
+
+// Шаблон для огрнаичивающего контейнера
+$maxWidthContainerPattern: 1200px;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainerPattern + $containerPadding; 
+// Тип адаптива:
+
+// 1 = отзывчивость (у контейнера нет брейк-поинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам).
+$responsiveType: 1;
+
+
+
+//Брейк-поинты =================================================================
+$pc: em($containerWidth); // Пк, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+// Второй шрифт
+%nunito {
+	font-family: Nunito;
+	font-style: normal;
+	font-weight: 400;
+}
+
+// Обнуление и общие параметры ==================================================
+@import "base/null";
+
+body {
+	background: #E5E5E5;
+	font-weight: 400;
+	@include montserrat(400);
+	// Скролл заблокирован
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+// Оболочка ===================================================================
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	
+	//Прижатие footer к низу страницы
+	> main {
+		flex: 1 1 auto;
+	}
+	// Фикс для слайдеров
+	> * {
+		min-width: 0;
+	}
+}
+
+// Ограничивающий контейнер ====================================================
+/* (i) Стили будут применяться ко всем классам содержащим *__container
+Например: header__container, main__container и т.д.
+*/
+/*
+@if ($responsiveType == 1) {
+	//Отзывчивая
+	[class*="__container"] {
+		@if ($maxWidthContainer > 0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding > 0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
+} @else {
+	// По брейк-поинтам 
+	[class*="__container"] {
+		margin: 0 auto;
+
+		@if ($maxWidthContainer > 0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding > 0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding > 0 and $maxWidthContainer > 0) {
+				padding: 0 rem(math.div($containerPadding, 2))
+			}
+		}
+	}
+}
+*/
+
+@import "header";
+
+@import "main";
+
+@import "footer";

@@ -1,0 +1,39 @@
+.navigation {
+	
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		list-style: none;
+		border: 3px solid rgba(136, 158, 175, 0.24);
+		border-right: none;
+		border-left: none;
+		border-bottom: none;
+		margin: 0 auto;
+		width: 1730px;
+	}
+
+	&__item {
+		@include montserrat(400);
+		text-transform: uppercase;
+		color: #000000;
+		font-size: 20px;
+		line-height: 24px;
+		margin: 36px 0px 62px 0px;
+		cursor: pointer;
+		padding-right: 20px;
+		position: relative;
+
+		&_mod::after {
+			content:"";
+			position:absolute;
+			top: 6px;
+			right: 0;
+			width: 6px;
+			height: 6px;
+			border: 3px solid #000000;
+			border-left: none;
+			border-top: none;
+			transform: rotate(45deg);
+		}
+	}
+}

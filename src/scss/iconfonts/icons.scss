@@ -1,0 +1,131 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?916sqn');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?916sqn#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?916sqn') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?916sqn') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?916sqn##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"]::before,
+ [class*=" _icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-gift {
+  &:before {
+    content: $_icon-gift; 
+  }
+}
+._icon-pay {
+  &:before {
+    content: $_icon-pay; 
+  }
+}
+._icon-delete {
+  &:before {
+    content: $_icon-delete; 
+  }
+}
+._icon-compare {
+  &:before {
+    content: $_icon-compare; 
+  }
+}
+._icon-work-time {
+  &:before {
+    content: $_icon-work-time; 
+  }
+}
+._icon-shopping-cart-1 {
+	
+  &:before {
+    content: $_icon-shopping-cart-1; 
+  }
+}
+._icon-shopping-cart-2 {
+  &:before {
+    content: $_icon-shopping-cart-2; 
+  }
+}
+._icon-account {
+  &:before {
+    content: $_icon-account; 
+  }
+}
+._icon-search {
+  &:before {
+    content: $_icon-search; 
+  }
+}
+._icon-delivery {
+  &:before {
+    content: $_icon-delivery; 
+  }
+}
+._icon-plus {
+  &:before {
+    content: $_icon-plus; 
+  }
+}
+._icon-arrow-bottom {
+  &:before {
+    content: $_icon-arrow-bottom; 
+  }
+}
+._icon-lamel {
+  &:before {
+    content: $_icon-lamel; 
+  }
+}
+._icon-category {
+  &:before {
+    content: $_icon-category; 
+  }
+}
+._icon-thickness {
+  &:before {
+    content: $_icon-thickness; 
+  }
+}
+._icon-width {
+  &:before {
+    content: $_icon-width; 
+  }
+}
+._icon-length {
+  &:before {
+    content: $_icon-length; 
+  }
+}
+._icon-lamel-type-1 {
+  &:before {
+    content: $_icon-lamel-type-1; 
+  }
+}
+._icon-lamel-type-2 {
+  &:before {
+    content: $_icon-lamel-type-2; 
+  }
+}
+._icon-bookmark {
+  &:before {
+    content: $_icon-bookmark; 
+  }
+}
